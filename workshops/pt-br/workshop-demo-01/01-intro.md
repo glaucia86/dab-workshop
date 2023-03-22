@@ -13,9 +13,11 @@ O Data API Builder (DAB) é uma ferramenta de código aberto da Microsoft que co
 
 Com esse serviço, podemos facilmente manipular dados com suporte para operações CRUD (Create, Read, Update e Delete). Incluso também suporte para autorização integrada e relacionamentos. 
 
+A parte mais interessante do Data API Builder é que você poder usar de forma offline (ou localmente) ou na nuvem com o Azure. Permitindo assim, criar rapidamente um Back-end totalmente funcional com um Banco de Dados a sua escolha, visando justamente acelerar o processo de desenvolvimento.
+
 Se você desejar aprender mais sobre o **[Data API Builder](https://learn.microsoft.com/azure/data-api-builder/overview-to-data-api-builder?WT.mc_id=javascript-75515-gllemos)**
 
-Os bancos de dados suportados são:
+Os Bancos de Dados suportados são:
 
 - **[Azure SQL](https://azure.microsoft.com/products/azure-sql/?WT.mc_id=javascript-75515-gllemos)** 
 - **[SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads?WT.mc_id=javascript-75515-gllemos)**

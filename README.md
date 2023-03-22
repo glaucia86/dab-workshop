@@ -27,15 +27,18 @@ Welcome to the DAB (Data API Builder) workshops. In this repository, you will fi
 
 The workshops was written in a way that you can follow it in order. However, you can also jump to a specific workshop if you want to learn a specific topic. And also, if you want to translate the workshops to your language, you can do it by following the **[Translation Guide](translation-guide.md)**.
 
-| Workshops                                                       | en-us                                                    | pt-br                                                    | es           | fr           |
-| --------------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | ------------ | ------------ |
-| Full Stack Application with DAB + NestJS + Azure SQL and Vue.Js | **[HERE](workshops/en-us/workshop-demo-01/01-intro.md)** | **[AQUI](workshops/pt-br/workshop-demo-01/01-intro.md)** | **[TODO]()** | **[TODO]()** |
+| Workshops                                              | en-us                                                    | pt-br                                                    | es           | fr           |
+| ------------------------------------------------------ | -------------------------------------------------------- | -------------------------------------------------------- | ------------ | ------------ |
+| Full Stack Application with DAB + Azure SQL and Vue.Js | **[HERE](workshops/en-us/workshop-demo-01/01-intro.md)** | **[AQUI](workshops/pt-br/workshop-demo-01/01-intro.md)** | **[TODO]()** | **[TODO]()** |
 
 ## ⭐️ Free Courses & Important Resources
 
 Here are some free courses and important resources that you can use to learn more about DAB (Data API Builder)
 
-- ✅ **[DAB Documentation]()**
+- ✅ **[DAB Documentation](https://learn.microsoft.com/azure/data-api-builder/overview-to-data-api-builder?WT.mc_id=javascript-75515-gllemos)**
+- ✅ **[DAB GitHub Repository](https://github.com/Azure/data-api-builder)**
+- ✅ **[DAB Discussion](https://github.com/Azure/data-api-builder/discussions)**
+- ✅ **[Azure Tips & Tricks - Conecta uma Base Dados diretamente desde o Azure Static Web Apps](https://www.youtube.com/watch?v=vGOnh0UrADg)**
 
 ## ❓ Questions? Comments? 
 
