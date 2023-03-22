@@ -21,6 +21,8 @@ Para facilitar no momento de desenvolver, faremos uso do DAB CLI. Para instalar 
 dotnet tool install --global Microsoft.DataApiBuilder --version <numero_versao>
 ```
 
+> para verificar a versão mais atualizada, vocês podem conferir diretamente no repositório da ferramenta **[AQUI](https://github.com/Azure/data-api-builder/tags)**
+
 Se você tiver uma versão anterior do DAB CLI instalada, você pode atualizar para a versão mais recente executando o seguinte comando:
 
 ```bash
@@ -35,7 +37,7 @@ dab --version
 
 Se aparecer a versão do DAB CLI, está tudo certo.
 
-Procure instalar também as demais ferramentas descritas nos pré-requisitos para que possamos dar continuidade no workshop.
+Procure instalar também as demais ferramentas descritas no _pré-requisitos_ para que possamos dar continuidade no workshop.
 
 Vamos agora prosseguir!
 
