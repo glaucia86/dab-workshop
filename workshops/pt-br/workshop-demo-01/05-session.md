@@ -1,6 +1,8 @@
 # Conectando a Base de Dados com Azure Data Studio
 
-Para o nosso workshop, com intuito de aprender a ferramenta, estaremos trabalhando com uma tabela:
+## Criando a tabela Employee
+
+Para o nosso workshop, com intuito de aprender a ferramenta, estaremos trabalhando com uma tabela apenas:
 
 * `dbo.employee`: contém a tabela **Employee**
 
@@ -34,6 +36,9 @@ Agora, vamos criar a nossa tabela `Employee`. Para isso, clique com o botão dir
 
 ![Azure Data Studio](./../../workshop-images/image-15.jpg)
 
+<details><summary><b>dbo.employee.sql</b></summary>
+<br/>
+
 ```sql
 CREATE TABLE [dbo].[employee] (
     [employee_id] UNIQUEIDENTIFIER NOT NULL,
@@ -47,11 +52,14 @@ CREATE TABLE [dbo].[employee] (
     CONSTRAINT [Employee_employee_registration_key] UNIQUE NONCLUSTERED ([employee_registration])
 );
 ```
+</details>
+<br/>
 
 Se aparecer a mensagem `1 row(s) affected` significa que a tabela foi criada com sucesso.
 
 ![Azure Data Studio](./../../workshop-images/image-16.jpg)
 
+Agora que vimos que a nossa conexão está funcionando e a nossa tabela foi criada, vamos continuar com o nosso workshop na próxima sessão.
 
 **[⬅️ Voltar: Sessão 04](./04-session.md) | **[Próximo: Sessão 06 ➡️](./06-session.md)****
 
