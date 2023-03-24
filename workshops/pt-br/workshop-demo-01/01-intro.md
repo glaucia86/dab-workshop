@@ -1,7 +1,6 @@
 # Aplicação Full Stack com DAB + Azure SQL & Vue.js
 
-<some image here>
-![image-01](./../../workshop-images/dab-workshops.gif)
+![dab](./../../workshop-images/dab-workshops.gif)
 
 Nesse workshop vamos aprender a criar uma aplicação completa utilizando o DAB, Azure SQL e o Vue.js. Vamos criar uma aplicação de gerenciamento de empregados, onde podemos cadastrar, editar e excluir funcionários.
 
