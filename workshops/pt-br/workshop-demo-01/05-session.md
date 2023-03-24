@@ -40,7 +40,7 @@ Agora, vamos criar a nossa tabela `Employee`. Para isso, clique com o botão dir
 <br/>
 
 ```sql
-CREATE TABLE [dbo].[employee] (
+CREATE TABLE [dbo].[employees] (
     [employee_id] UNIQUEIDENTIFIER NOT NULL,
     [name] NVARCHAR(100) NOT NULL,
     [job_role] NVARCHAR(100) NOT NULL,
