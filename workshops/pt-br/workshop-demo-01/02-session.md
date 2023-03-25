@@ -1,4 +1,4 @@
-# Sessão 01: Instalação e Configuração do DAB
+# Instalação e Configuração do DAB
 
 Nessa sessão, vamos instalar e configurar o ambiente de desenvolvimento.
 
