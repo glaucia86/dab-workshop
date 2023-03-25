@@ -43,7 +43,6 @@ To follow this workshop, you will need to have the following software installed 
   - Algumas extensões do Visual Studio Code:
     - **[GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot&WT.mc_id=javascript-75515-gllemos)**
     - **[Azure Tools Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack&WT.mc_id=javascript-75515-gllemos)**
-    - **[Azure Functions Vs Code Extension](https://github.com/Azure/azure-functions-core-tools)**
     - **[REST Client Extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client&WT.mc_id=javascript-75515-gllemos)**
     - **[Remote Containers Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers&WT.mc_id=javascript-75515-gllemos)**
 
