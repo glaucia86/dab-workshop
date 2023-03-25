@@ -59,5 +59,5 @@ Se aparecer a mensagem `1 row(s) affected` significa que a tabela foi criada com
 
 Agora que vimos que a nossa conexão está funcionando e a nossa tabela foi criada, vamos continuar com o nosso workshop na próxima sessão.
 
-**[⬅️ Voltar: Sessão 04](./04-session.md) | **[Próximo: Sessão 06 ➡️](./06-session.md)****
+**[⬅️ Voltar: Sessão 03](./03-session.md) | **[Próximo: Sessão 05 ➡️](./05-session.md)****
 
