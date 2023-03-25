@@ -3,7 +3,7 @@
     <!-- BEGIN NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand">Full Stack App - Azure SQL + Prisma</a>
+        <a class="navbar-brand">Full Stack App - DAB + Azure SQL + ASWA</a>
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
