@@ -73,7 +73,7 @@ Agora que já criamos esse arquivo, podemos definir quais entidades serão expos
 
 
 ```bash
-dab add Employee --source dbo.employees --permissions "anonymous:*"
+dab add employee --source dbo.employees --permissions "anonymous:*"
 ```
 
 > Se preferir, você também pode adicionar as entidades manualmente no arquivo de configuração. Para isso, basta adicionar a entidade no arquivo `dab.config.json` e definir as propriedades que você deseja expor.
