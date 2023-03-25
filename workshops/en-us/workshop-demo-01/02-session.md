@@ -41,4 +41,4 @@ Please also install the other tools described in the prerequisites so that we ca
 Let's move on now!
 
 **[⬅️ Back: Intro](./01-intro.md)**
-| **[Nesst: Session 03 ➡️](./03-session.md)**
+| **[Next: Session 03 ➡️](./03-session.md)**
