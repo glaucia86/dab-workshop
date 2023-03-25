@@ -6,7 +6,9 @@ Nesse workshop vamos aprender a criar uma aplicação completa utilizando o DAB,
 
 ## O que é o DAB?
 
-O Data API Builder (DAB) é uma ferramenta de código aberto da Microsoft que converte REST e GraphQL em consultas de Banco de Dados. Com Data API Builder, você pode gerar código com base em seu esquema de banco de dados que pode ser acessado por meio de uma API REST ou GraphQL que funcionará com qualquer linguagem, plataforma ou dispositivo. Ele também vem com suporte para comportamentos de organização dos dados que requerem código adicional, como paginação, filtragem e classificação pronta para uso, reduzindo o tempo necessário para criar o Back-End da sua aplicação. Outro ponto importante a ser mencionado é que o DAB pode ser executado localmente, em contêiner ou como um Serviço Gerenciado no Azure, por meio do novo recurso de Conexão de Banco de Dados disponível no Azure Static Web Apps.
+O Data API Builder (DAB) é uma ferramenta de código aberto da Microsoft que converte REST e GraphQL em consultas de Banco de Dados. Com Data API Builder, você pode gerar código com base em seu esquema de banco de dados que pode ser acessado por meio de uma API REST ou GraphQL que funcionará com qualquer linguagem, plataforma ou dispositivo. 
+
+Ele também vem com suporte para comportamentos de organização dos dados que requerem código adicional, como paginação, filtragem e classificação pronta para uso, reduzindo o tempo necessário para criar o Back-End da sua aplicação. Outro ponto importante a ser mencionado é que o DAB pode ser executado localmente, em contêiner ou como um Serviço Gerenciado no Azure, por meio do novo recurso de Conexão de Banco de Dados disponível no Azure Static Web Apps.
 
 ![image-01](./../../workshop-images/dab-workflow.png)
 
@@ -16,7 +18,7 @@ A parte mais interessante do Data API Builder é que você poder usar de forma o
 
 Se você desejar aprender mais sobre o **[Data API Builder](https://learn.microsoft.com/azure/data-api-builder/overview-to-data-api-builder?WT.mc_id=javascript-75515-gllemos)**
 
-Os Bancos de Dados suportados são:
+Os Bancos de Dados suportados pelo DAB são:
 
 - **[Azure SQL](https://azure.microsoft.com/products/azure-sql/?WT.mc_id=javascript-75515-gllemos)** 
 - **[SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads?WT.mc_id=javascript-75515-gllemos)**
@@ -29,6 +31,7 @@ Os Bancos de Dados suportados são:
 Para seguir esse workshop, você precisará ter instalado em sua máquina:
 
 - **[Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=javascript-75515-gllemos)**
+- **[DAB CLI](https://github.com/Azure/data-api-builder)**
 - **[Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download?WT.mc_id=javascript-75515-gllemos)**
 - **[Node.Js](https://nodejs.org/en/)**
 - **[Azure Static Web Apps](https://azure.microsoft.com/services/app-service/static/?WT.mc_id=javascript-75515-gllemos)** 
