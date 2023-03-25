@@ -1,63 +1,118 @@
-# Conectando a Base de Dados com Azure Data Studio
+# Criando o arquivo de configuração para o DAB (Data API Builder)
 
-## Criando a tabela Employee
+Nessa sessão aprenderemos a configurar o arquivo de configuração do DAB (Data API Builder) para que possamos gerar as nossas APIs.
 
-Para o nosso workshop, com intuito de aprender a ferramenta, estaremos trabalhando com uma tabela apenas:
+O Data API Builder faz uso do mecanismo do Azure Databases que precisa de um arquivo de configuração. Através desse arquivo definiremos qual banco de dados o DAB se conectará e quais entidades serão expostas pela API, juntamente com suas propriedades.
 
-* `dbo.employee`: contém a tabela **Employee**
+Para isso, usaremos o DAB CLI para inicializarmos o arquivo de configuração. Para isso, execute o comando abaixo (no seu terminal):
 
-E, para criar essa tabela, estarei usando uma ferramenta chamada **[Azure Data Studio](https://azure.microsoft.com/products/data-studio/?WT.mc_id=javascript-75515-gllemos)**. O Azure Data Studio é uma ferramenta incrível. O seu design lembra muito o Visual Studio Code e é muito leve e simples de usar. 
+> Trocando as informações da sua connection string e dentro da pasta do projeto `demo-01` (ou conforme você definiu)
 
-Inclusive você pode usar extensões para usar por exemplo: Oracle, MySQL ou PostgreSQL. E, não somente integração com Banco de Dados Relacionais, incluso também os Não Relacionais, tais como: MongoDB e Azure CosmosDB. 
+```bash
+dab init --database-type "mssql" --connection-string "Server=localhost;Database=<database-name>;User ID=<user>;Password=<password>;TrustServerCertificate=true" --host-mode "Development"
+``` 
 
-E, sem contar que ele também dá suporte robusto a linguagens para: T-SQL, PowerShell, Python, KQL, Apache Spark TM e PySpark justamente com a intenção de gerenciar e consultar o SQL Server, o PostgreSQL e o Azure Data Explorer em um único lugar. Além disso, ele é multiplataforma e pode ser usado em Windows, Linux e Mac.
+Depois de executar o comando acima, criará um arquivo chamado `dab.config.json` na raiz do seu projeto. Esse arquivo é o arquivo de configuração do DAB.
 
-Bom, depois de realizar o download da ferramenta, vamos conectar com o nosso banco de dados. Para isso, vamos clicar no botão **New Connection** e preencher os dados conforme a imagem abaixo:
+> **Observação:** O arquivo de configuração do DAB é um arquivo JSON. Você pode editá-lo manualmente, mas é recomendado que você use o DAB CLI para gerar o arquivo de configuração.
 
-> se o status do seu serviço do Azure SQL estiver como 'Paused' no Azure Portal, você precisará ir até: `Settings -> Compute + Storage -> Compute Hardware -> Auto-pause delay` e desmarcar a opção `Enable auto-pause` e depois clicar no botão `Apply` para que o serviço volte a funcionar.
+Por mais que apareça a seguinte mensagem no terminal, não se preocupe, o arquivo de configuração foi criado com sucesso.
 
-![Azure Data Studio](./../../workshop-images/image-10.jpg)
+![image-17](./../../workshop-images/image-17.jpg)
 
-Depois, basta colocar as informações de conexão com a base de dados que criamos anteriormente, conforme a imagem abaixo. Porém, clique em `Advanced` para que possamos colocar a porta do nosso banco de dados. Que nesse caso é a `1433`.
-
-![Azure Data Studio](./../../workshop-images/image-11.jpg)
-
-Retorne para a tela inicial e clique no combo `Database`. Aparecerá uma nova janela `Create new firewall rule`. Nessa janela aparecerá o IP da sua máquina e por consequencia para você se conectar na sua conta do Azure. Clique em `Add an account` e faça o login com a sua conta do Azure. Aparecerá as credenciais da sua conta e o seu `Azure Tenant` Após isso, clique em `Ok`.
-
-![Azure Data Studio](./../../workshop-images/image-12.jpg)
-
-![Azure Data Studio](./../../workshop-images/image-13.jpg)
-
-Depois disso, basta colocar um nome dessa conexão. No meu caso eu coloquei `dab-workshop` e clique em `Connect`.
-
-![Azure Data Studio](./../../workshop-images/image-14.jpg)
-
-Agora, vamos criar a nossa tabela `Employee`. Para isso, clique com o botão direito do mouse na base de dados que você criou (conforme a imagem abaixo) e clique em `New Query`. Depois, cole o código abaixo e clique em `Run` para executar o script.
-
-![Azure Data Studio](./../../workshop-images/image-15.jpg)
-
-<details><summary><b>dbo.employee.sql</b></summary>
+<details><summary><b>Exemplo de arquivo gerado: dab.config.json</b></summary>
 <br/>
 
-```sql
-CREATE TABLE [dbo].[employees] (
-    [employee_id] INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
-    [name] NVARCHAR(100) NOT NULL,
-    [job_role] NVARCHAR(100) NOT NULL,
-    [salary] DECIMAL(12, 2) NOT NULL,
-    [employee_registration] INT NOT NULL CONSTRAINT [Employee_employee_registration_key] UNIQUE NONCLUSTERED,
-    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Employee_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
-    [updateAt] DATETIME2 NOT NULL CONSTRAINT [Employee_updateAt_df] DEFAULT CURRENT_TIMESTAMP
-);
+```json
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v{dab-version}/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "options": {
+      "set-session-context": false
+    },
+    "connection-string": "Server=localhost;Database=<database-name>;User ID=<user>;Password=<password>;TrustServerCertificate=true"
+  },
+  "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/api"
+    },
+    "graphql": {
+      "allow-introspection": true,
+      "enabled": true,
+      "path": "/graphql"
+    },
+    "host": {
+      "mode": "development",
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      }
+    }
+  },
+  "entities": {}
+}
+```
+
+</details>
+<br/>
+
+Você pode ver que o arquivo de configuração do DAB é um arquivo JSON. Ele possui algumas propriedades que definem o tipo de banco de dados que será usado, nesse caso em `data-source` é justamente onde você vai definir qual será essa base, que pode ser: MySQL, PostgreSQL, SQL Server ou outra base de dados de sua escolha. 
+
+Se você deseja obter mais informações sobre o arquivo de configuração do DAB, acesse a **[documentação oficial](https://github.com/Azure/data-api-builder/blob/main/docs/configuration-file.md)**
+
+Nesse arquivo, dependendo da quantidade de tabelas que você tem, você pode definir relacionamentos de 1 para 1, 1 para N e N para N. O céu é o limite aqui.
+
+## Adicionando Entidades ao arquivo de configuração
+
+Agora que já criamos esse arquivo, podemos definir quais entidades serão expostas pela API. Para isso, vamos usar o DAB CLI para gerar o arquivo de configuração. Para isso, execute o comando abaixo (no seu terminal):
+
+
+```bash
+dab add employee --source dbo.employees --permissions "anonymous:*"
+```
+
+> Se preferir, você também pode adicionar as entidades manualmente no arquivo de configuração. Para isso, basta adicionar a entidade no arquivo `dab.config.json` e definir as propriedades que você deseja expor.
+
+No momento em que executamos o comando acima, o DAB CLI irá adicionar a entidade `Employee` no arquivo de configuração, conforme o exemplo abaixo:
+
+<details><summary><b>Exemplo de arquivo gerado: dab.config.json</b></summary>
+<br/>
+
+```json
+"entities": {
+    "Employee": {
+      "source": "dbo.employees",
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            "*"
+          ]
+        }
+      ]
+    }
 ```
 </details>
 <br/>
 
-Se aparecer a mensagem `1 row(s) affected` significa que a tabela foi criada com sucesso.
+> Observação: os nomes das entidades são case-sensitive. Por exemplo, se você definir a entidade como `Employee`, o DAB irá gerar a entidade como `Employee`. Se você definir a entidade como `employee`, o DAB irá gerar a entidade como `employee`. Porém, existem um guia de boas práticas que recomendamos que você siga. Para saber mais, acesse a **[documentação oficial](https://github.com/Azure/data-api-builder/blob/main/docs/best-practices.md)**
 
-![Azure Data Studio](./../../workshop-images/image-16.jpg)
+Na parte de `permissions` é onde a gente define quem (em termos de roles) quem pode acessar a entidade relacionada e quais ações pretendidas. E, as ações nesse caso aqui são as operações CRUD: create, read, update e delete. Porém, na parte de `role`, como fins de demonstração, estaremos definindo como `anonymous` para que qualquer pessoa, sem necessidade de ser autenticado, execute as operações CRUD relacionadas a nossa entidade `Employee`.
 
-Agora que vimos que a nossa conexão está funcionando e a nossa tabela foi criada, vamos continuar com o nosso workshop na próxima sessão.
+> Nunca use o `anonymous` em produção. Sempre defina as roles de acordo com a necessidade do seu projeto.
 
-**[⬅️ Voltar: Sessão 04](./04-session.md) | **[Próximo: Sessão 06 ➡️](./06-session.md)****
+Vamos agora começar de fato a usar a nossa API através do DAB CLI. Mas, veremos isso na próxima sessão.
+
+**[⬅️ Voltar: Sessão 05](./05-session.md) | **[Próximo: Sessão 07 ➡️](./07-session.md)****
+
+
+
+
+
+
 

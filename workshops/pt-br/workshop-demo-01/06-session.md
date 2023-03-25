@@ -1,118 +1,127 @@
-# Criando o arquivo de configuração para o DAB (Data API Builder)
+# Usando o Data API Builder para Azure SQL Database
 
-Nessa sessão aprenderemos a configurar o arquivo de configuração do DAB (Data API Builder) para que possamos gerar as nossas APIs.
+Nessa sessão, aprenderemos como usar o Data API Builder para conectar a nossa API com o banco de dados Azure SQL Database.
 
-O Data API Builder faz uso do mecanismo do Azure Databases que precisa de um arquivo de configuração. Através desse arquivo definiremos qual banco de dados o DAB se conectará e quais entidades serão expostas pela API, juntamente com suas propriedades.
-
-Para isso, usaremos o DAB CLI para inicializarmos o arquivo de configuração. Para isso, execute o comando abaixo (no seu terminal):
-
-> Trocando as informações da sua connection string e dentro da pasta do projeto `demo-01` (ou conforme você definiu)
+Agora que já fizemos toda a configuração do nosso banco de dados usando o DAB CLI na sessão anterior, agora estamos prontos para usar a nossa API. Para isso, execute o seguinte comando:
 
 ```bash
-dab init --database-type "mssql" --connection-string "Server=localhost;Database=<database-name>;User ID=<user>;Password=<password>;TrustServerCertificate=true" --host-mode "Development"
-``` 
+dab start
+```
 
-Depois de executar o comando acima, criará um arquivo chamado `dab.config.json` na raiz do seu projeto. Esse arquivo é o arquivo de configuração do DAB.
+> **Observação:** O comando `dab start` irá iniciar o servidor do DAB e expor a nossa API. Para parar o servidor, basta pressionar `Ctrl + C`.
 
-> **Observação:** O arquivo de configuração do DAB é um arquivo JSON. Você pode editá-lo manualmente, mas é recomendado que você use o DAB CLI para gerar o arquivo de configuração.
+Se ao executar o comando e aparecer a mensagem conforme a imagem abaixo, significa que o servidor foi iniciado com sucesso. Note que a porta indicada é a `5000`.
 
-Por mais que apareça a seguinte mensagem no terminal, não se preocupe, o arquivo de configuração foi criado com sucesso.
+![image-18](./../../workshop-images/image-18.jpg)
 
-![image-17](./../../workshop-images/image-17.jpg)
+## Executando os Endpoints 
 
-<details><summary><b>Exemplo de arquivo gerado: dab.config.json</b></summary>
-<br/>
+Agora é o momento que devemos testar a nossa API. Para isso, vamos usar o **[Postman](https://www.postman.com/)**. Mas, fica à vontade de usar qualquer outra ferramenta que você preferir.
+
+Como a nossa entidade é `employee`, a rota será: `/api/employee`
+
+Os verbos HTTP que possui suporte são:
+
+- `GET`: para obter dados
+- `POST`: para criar dados
+- `PUT`: para atualizar dados
+- `PATCH`: para atualizar dados parcialmente
+- `DELETE`: para deletar dados
+
+Vamos testar agora todas as rotas!
+
+## Rota: POST
+
+Para criar um novo empregado, abre o Postman e crie uma nova requisição:
+
+- Tipo: `POST`: `http://localhost:5000/api/employee`
+
+No Postman escolha a opção `Body -> raw` e inclua o seguinte JSON:
 
 ```json
 {
-  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v{dab-version}/dab.draft.schema.json",
-  "data-source": {
-    "database-type": "mssql",
-    "options": {
-      "set-session-context": false
-    },
-    "connection-string": "Server=localhost;Database=<database-name>;User ID=<user>;Password=<password>;TrustServerCertificate=true"
-  },
-  "runtime": {
-    "rest": {
-      "enabled": true,
-      "path": "/api"
-    },
-    "graphql": {
-      "allow-introspection": true,
-      "enabled": true,
-      "path": "/graphql"
-    },
-    "host": {
-      "mode": "development",
-      "cors": {
-        "origins": [],
-        "allow-credentials": false
-      },
-      "authentication": {
-        "provider": "StaticWebApps"
-      }
-    }
-  },
-  "entities": {}
+    "name": "John Doe",
+    "job_role": "Developer",
+    "salary": 3000.00,
+    "employee_registration": 778899
 }
 ```
 
-</details>
-<br/>
+Veja a imagem abaixo:
 
-Você pode ver que o arquivo de configuração do DAB é um arquivo JSON. Ele possui algumas propriedades que definem o tipo de banco de dados que será usado, nesse caso em `data-source` é justamente onde você vai definir qual será essa base, que pode ser: MySQL, PostgreSQL, SQL Server ou outra base de dados de sua escolha. 
+![image-19](./../../workshop-images/image-19.jpg)
 
-Se você deseja obter mais informações sobre o arquivo de configuração do DAB, acesse a **[documentação oficial](https://github.com/Azure/data-api-builder/blob/main/docs/configuration-file.md)**
+E para ter certeza de que gravou na base de dados, abre o Azure Data Studio e execute o seguinte comando:
 
-Nesse arquivo, dependendo da quantidade de tabelas que você tem, você pode definir relacionamentos de 1 para 1, 1 para N e N para N. O céu é o limite aqui.
-
-## Adicionando Entidades ao arquivo de configuração
-
-Agora que já criamos esse arquivo, podemos definir quais entidades serão expostas pela API. Para isso, vamos usar o DAB CLI para gerar o arquivo de configuração. Para isso, execute o comando abaixo (no seu terminal):
-
-
-```bash
-dab add employee --source dbo.employees --permissions "anonymous:*"
+```sql
+SELECT * FROM employees
 ```
 
-> Se preferir, você também pode adicionar as entidades manualmente no arquivo de configuração. Para isso, basta adicionar a entidade no arquivo `dab.config.json` e definir as propriedades que você deseja expor.
+Veja a imagem abaixo:
 
-No momento em que executamos o comando acima, o DAB CLI irá adicionar a entidade `Employee` no arquivo de configuração, conforme o exemplo abaixo:
+![image-20](./../../workshop-images/image-20.jpg)
 
-<details><summary><b>Exemplo de arquivo gerado: dab.config.json</b></summary>
-<br/>
+Já possuo alguns dados na minha base de dados, mas você pode ver que foi criado um novo empregado.
+
+## Rota: GET
+
+Para obter todos os empregados, abre o Postman e crie uma nova requisição:
+
+- Tipo: `GET`: `http://localhost:5000/api/employee`
+
+Retornará todos os empregados cadastrados.
+
+![image-21](./../../workshop-images/image-21.jpg)
+
+## Rota: GET by ID
+
+Para obter um empregado específico, abre o Postman e crie uma nova requisição:
+
+- Tipo: `GET`: `localhost:5000/api/employee/employee_id/2`
+
+Retornará o empregado com o ID 2.
+
+![image-22](./../../workshop-images/image-22.jpg)
+
+Observe que a rota é composta por 3 partes:
+
+- `/api/employee`: é a rota base
+- `/employee_id`: é a primary key da coluna
+- `/2`: é o valor da primary key
+
+## Rota: PUT
+
+Para atualizar um empregado, abre o Postman e crie uma nova requisição:
+
+- Tipo: `PUT`: `http://localhost:5000/api/employee/employee_id/3`
+
+No Postman escolha a opção `Body -> raw` e inclua o seguinte JSON:
 
 ```json
-"entities": {
-    "Employee": {
-      "source": "dbo.employees",
-      "permissions": [
-        {
-          "role": "anonymous",
-          "actions": [
-            "*"
-          ]
-        }
-      ]
-    }
+{
+    "name": "Glaucia Lemos",
+    "job_role": "Developer Advocate",
+    "salary": 3000.00,
+    "employee_registration": 445566,
+    "createdAt": "2023-03-24T23:59:02",
+    "updateAt": "2023-03-24T23:59:02"
+}
 ```
-</details>
-<br/>
 
-> Observação: os nomes das entidades são case-sensitive. Por exemplo, se você definir a entidade como `Employee`, o DAB irá gerar a entidade como `Employee`. Se você definir a entidade como `employee`, o DAB irá gerar a entidade como `employee`. Porém, existem um guia de boas práticas que recomendamos que você siga. Para saber mais, acesse a **[documentação oficial](https://github.com/Azure/data-api-builder/blob/main/docs/best-practices.md)**
+## Rota: DELETE
 
-Na parte de `permissions` é onde a gente define quem (em termos de roles) quem pode acessar a entidade relacionada e quais ações pretendidas. E, as ações nesse caso aqui são as operações CRUD: create, read, update e delete. Porém, na parte de `role`, como fins de demonstração, estaremos definindo como `anonymous` para que qualquer pessoa, sem necessidade de ser autenticado, execute as operações CRUD relacionadas a nossa entidade `Employee`.
+Para deletar um empregado, abre o Postman e crie uma nova requisição:
 
-> Nunca use o `anonymous` em produção. Sempre defina as roles de acordo com a necessidade do seu projeto.
+- Tipo: `DELETE`: `http://localhost:5000/api/employee/employee_id/3`
 
-Vamos agora começar de fato a usar a nossa API através do DAB CLI. Mas, veremos isso na próxima sessão.
+E para ter certeza de que deletou na base de dados, abre o Azure Data Studio e execute o seguinte comando:
 
-**[⬅️ Voltar: Sessão 05](./05-session.md) | **[Próximo: Sessão 07 ➡️](./07-session.md)****
+```sql
+SELECT * FROM employees
+```
 
+Se deletou com sucesso, o registro não será mais exibido.
 
+Se todas essas rotas foram executadas com sucesso, parabéns! Agora temos que integrar a nossa API com o nosso Frontend. Para isso, vamos para a próxima sessão.
 
-
-
-
-
+**[⬅️ Voltar: Sessão 06](./06-session.md) | **[Próximo: Sessão 08 ➡️](./08-session.md)****
