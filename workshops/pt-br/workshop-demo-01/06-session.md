@@ -1,4 +1,4 @@
-# Usando o Data API Builder para Azure SQL Database
+# Usando o Data API Builder com Azure SQL Database
 
 Nessa sessão, aprenderemos como usar o Data API Builder para conectar a nossa API com o banco de dados Azure SQL Database.
 
@@ -124,4 +124,4 @@ Se deletou com sucesso, o registro não será mais exibido.
 
 Se todas essas rotas foram executadas com sucesso, parabéns! Agora temos que integrar a nossa API com o nosso Frontend. Para isso, vamos para a próxima sessão.
 
-**[⬅️ Voltar: Sessão 06](./06-session.md) | **[Próximo: Sessão 08 ➡️](./08-session.md)****
+**[⬅️ Voltar: Sessão 05](./05-session.md) | **[Próximo: Sessão 07 ➡️](./07-session.md)****
