@@ -67,6 +67,10 @@ If you want to get more information about the DAB configuration file, access the
 
 In this file, depending on the number of tables you have, you can define relationships of 1 to 1, 1 to N, and N to N. The sky's the limit here.
 
+## TODO: Using DAB_ENVIRONMET 
+
+(include some important information about it here)
+
 ## Adding Entities to the Configuration File
 
 Now that we've made this file, we can use it to decide which entities the API will show. To do this, we will use the DAB CLI to generate the configuration file. To do this, run the command below (in your terminal:
@@ -104,6 +108,10 @@ At the moment we run the above command, the DAB CLI will add the `Employee` enti
 In the `permissions` part, we define who (in terms of roles) can access the related entity and what actions are intended. And the actions in this case are the CRUD operations: create, read, update, and delete. But in the `role` part, we will set it to `anonymous` for demonstration purposes so that anyone can do the CRUD operations for our `Employee` entity without needing to be authenticated.
 
 > Never use anonymous in production. Always define the roles according to the needs of your project.
+
+## TODO: Talk about the CROSS-ORIGIN
+
+(include some important information here)
 
 Now, let's actually start using our API through the DAB CLI. But we will see that in the next section.
 

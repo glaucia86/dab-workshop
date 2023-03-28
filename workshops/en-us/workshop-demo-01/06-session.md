@@ -5,7 +5,7 @@ In this session, we will learn how to use the Data API Builder to connect our AP
 Since we finished setting up the database with the DAB CLI in the last session, we are now ready to use our API. To do this, run the following command:
 
 ```bash
-dab start
+dab start --no-https-redirect
 ```
 
 > **Note:** The dab start command will start the DAB server and expose our API. To stop the server, simply press `Ctrl+C`.
