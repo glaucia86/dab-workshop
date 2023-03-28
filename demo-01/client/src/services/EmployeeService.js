@@ -15,7 +15,7 @@ export default {
   async createNewEmployee(employee) {
     try {
       const response = await Api().post('/employee', employee);
-      return response.data;
+      return response.data.value;
     } catch (error) {
       if (error.response.status === 409) {
         throw new Error('Employee already exists!', error);
@@ -32,7 +32,7 @@ export default {
   async getEmployees() {
     try {
       const response = await Api().get('/employee');
-      return response.data;
+      return response.data.value;
     } catch (error) {
       console.error(error);
       throw new Error('Error!');
@@ -46,7 +46,7 @@ export default {
   async getEmployeeId(id) {
     try {
       const response = await Api().get(`/employee/employee_id/${id}`);
-      return response.data;
+      return response.data.value;
     } catch (error) {
       if (error.response.status === 404) {
         throw new Error('Employee not found!', error);
@@ -64,7 +64,7 @@ export default {
     try {
       const id = employee.employee_id;
       const response = await Api().put(`/employee/employee_id/${id}`, employee);
-      return response.data;
+      return response.data.value;
     } catch (error) {
       if (error.response.status === 404) {
         throw new Error('Employee not found!', error);
