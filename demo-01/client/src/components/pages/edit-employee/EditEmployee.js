@@ -6,11 +6,11 @@
  * author: Glaucia Lemos <twitter: @glaucia_lemos86>
  */
 
-import { format } from 'date-fns';
-import EmployeeService from '@/services/EmployeeService';
+import { format } from "date-fns";
+import EmployeeService from "@/services/EmployeeService";
 
 export default {
-  name: 'EditEmployeeComponent',
+  name: "EditEmployeeComponent",
   data() {
     return {
       employeeForm: {},
@@ -23,21 +23,20 @@ export default {
 
   methods: {
     async getEmployeeById() {
-      const { id } = this.$route.params;
       try {
-        const response = await EmployeeService.getEmployeeId(id);
-        this.employeeForm = { ...response };
+        const response = await EmployeeService.getEmployeeId(this.$route.params.id);
+        this.employeeForm = { ...response.value[0] };
       } catch (error) {
         await this.$swal({
           title: error.message,
-          icon: 'error',
+          icon: "error",
           showConfirmButton: true,
           allowOutsideClick: false,
           allowEnterKey: true,
           allowEscapeKey: false,
         });
         this.$router.push({
-          name: 'list',
+          name: "list",
         });
       }
     },
@@ -48,8 +47,8 @@ export default {
         await EmployeeService.updateEmployee(this.employeeForm);
 
         await this.$swal({
-          title: 'Employee updated successfully!',
-          icon: 'success',
+          title: "Employee updated successfully!",
+          icon: "success",
           showConfirmButton: true,
           allowOutsideClick: false,
           allowEnterKey: true,
@@ -58,7 +57,7 @@ export default {
       } catch (error) {
         await this.$swal({
           title: error.message,
-          icon: 'error',
+          icon: "error",
           showConfirmButton: true,
           allowOutsideClick: false,
           allowEnterKey: true,
@@ -66,7 +65,7 @@ export default {
         });
       } finally {
         this.$router.push({
-          name: 'list',
+          name: "list",
         });
       }
     },
