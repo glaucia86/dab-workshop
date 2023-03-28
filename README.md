@@ -10,7 +10,7 @@ Welcome to the DAB (Data API Builder) workshops. In this repository, you will fi
 ## 🚀 Resources Used
 
 - **[Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=javascript-75515-gllemos)**
-- **[Node.Js](https://nodejs.org/en/)**
+- **[Node.Js v.16.x - due to the Front-End Project](https://nodejs.org/en/)**
 - **[Azure Data Studio](https://azure.microsoft.com/en-us/products/data-studio/)**
 - **[Azure Static Web Apps](https://azure.microsoft.com/services/app-service/static/?WT.mc_id=javascript-75515-gllemos)** 
 - **[Azure Static Web App CLI](https://azure.github.io/static-web-apps-cli/)**
