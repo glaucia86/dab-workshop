@@ -46,7 +46,7 @@ export default {
   async getEmployeeId(id) {
     try {
       const response = await Api().get(`/employee/employee_id/${id}`);
-      return response.data.value[0];
+      return response.data.value;
     } catch (error) {
       if (error.response.status === 404) {
         throw new Error('Employee not found!', error);
