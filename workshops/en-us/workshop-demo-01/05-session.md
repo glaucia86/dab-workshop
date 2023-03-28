@@ -67,6 +67,10 @@ If you want to get more information about the DAB configuration file, access the
 
 In this file, depending on the number of tables you have, you can define relationships of 1 to 1, 1 to N, and N to N. The sky's the limit here.
 
+## Using DAB_ENVIRONMET 
+
+(include some important information about it here)
+
 ## Adding Entities to the Configuration File
 
 Now that we've made this file, we can use it to decide which entities the API will show. To do this, we will use the DAB CLI to generate the configuration file. To do this, run the command below (in your terminal:
