@@ -11,10 +11,10 @@ import axios from 'axios';
 export default () => axios.create({
   // => Back-End 'baseURL'-> will make communication btw Front-End with Back-End
   // baseURL: process.env.VUE_APP_API_BASE_URL,
-
   // ==> Back-End (Azure Functions - locally)
   // baseURL: 'http://localhost:7071/api',
-
   // ==> Back-End (Azure Functions - deployed to ASWA)
-  baseURL: '/api',
+  // baseURL: '/api',
+  // ==> API - Data API Builder
+  baseURL: 'http://localhost:5000/api',
 });

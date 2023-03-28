@@ -10,11 +10,11 @@ import Api from './Api';
 export default {
   /**
    * Create a new 'Employee'
-   * (POST): localhost:3001/api/v1/employees
+   * (POST): http://localhost:5000/api
    */
   async createNewEmployee(employee) {
     try {
-      const response = await Api().post('/employees', employee);
+      const response = await Api().post('/employee', employee);
       return response.data;
     } catch (error) {
       if (error.response.status === 409) {
@@ -27,11 +27,11 @@ export default {
 
   /**
    * List All 'Employees'
-   * (GET): localhost:3001/api/v1/employees
+   * (GET): http://localhost:5000/api
    */
   async getEmployees() {
     try {
-      const response = await Api().get('/employees');
+      const response = await Api().get('/employee');
       return response.data;
     } catch (error) {
       console.error(error);
@@ -41,11 +41,11 @@ export default {
 
   /**
    * List 'Employee' by Id
-   * (GET): localhost:3001/api/v1/employees/:id
+   * (GET): http://localhost:5000/api/employee/employee_id/1
    */
   async getEmployeeId(id) {
     try {
-      const response = await Api().get(`/employees/${id}`);
+      const response = await Api().get(`/employee/employee_id/${id}`);
       return response.data;
     } catch (error) {
       if (error.response.status === 404) {
@@ -58,12 +58,12 @@ export default {
 
   /**
    * Update 'Employee' by Id
-   * (PUT): localhost:3001/api/v1/employees/:id
+   * (PUT): http://localhost:5000/api/employee/employee_id/1
    */
   async updateEmployee(employee) {
     try {
       const id = employee.employee_id;
-      const response = await Api().put(`/employees/${id}`, employee);
+      const response = await Api().put(`/employee/employee_id/${id}`, employee);
       return response.data;
     } catch (error) {
       if (error.response.status === 404) {
@@ -76,11 +76,11 @@ export default {
 
   /**
    * Delete 'Employee' by Id
-   * (DELETE): localhost:3001/api/v1/employees/:id
+   * (DELETE): http://localhost:5000/api/employee/employee_id/1
    */
   async deleteEmployee(id) {
     try {
-      const response = await Api().delete(`/employees/${id}`);
+      const response = await Api().delete(`/employee/employee_id/${id}`);
       return response.data;
     } catch (error) {
       console.error(error);
