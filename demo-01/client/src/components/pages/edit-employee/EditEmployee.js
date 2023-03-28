@@ -45,8 +45,6 @@ export default {
       //  Service call passing properties through 'employeeForm'
       try {
         const response = await EmployeeService.updateEmployee(this.employeeForm);
-
-        debugger;
         console.log(response);
 
         this.$data.employeeForm = response;
