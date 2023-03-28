@@ -6,11 +6,11 @@
  * author: Glaucia Lemos <twitter: @glaucia_lemos86>
  */
 
-import { format } from "date-fns";
-import EmployeeService from "@/services/EmployeeService";
+import { format } from 'date-fns';
+import EmployeeService from '@/services/EmployeeService';
 
 export default {
-  name: "EditEmployeeComponent",
+  name: 'EditEmployeeComponent',
   data() {
     return {
       employeeForm: {},
@@ -25,18 +25,18 @@ export default {
     async getEmployeeById() {
       try {
         const response = await EmployeeService.getEmployeeId(this.$route.params.id);
-        this.employeeForm = { ...response.value[0] };
+        this.employeeForm = { ...response };
       } catch (error) {
         await this.$swal({
           title: error.message,
-          icon: "error",
+          icon: 'error',
           showConfirmButton: true,
           allowOutsideClick: false,
           allowEnterKey: true,
           allowEscapeKey: false,
         });
         this.$router.push({
-          name: "list",
+          name: 'list',
         });
       }
     },
@@ -44,11 +44,16 @@ export default {
     async updateFormEmployee() {
       //  Service call passing properties through 'employeeForm'
       try {
-        await EmployeeService.updateEmployee(this.employeeForm);
+        const response = await EmployeeService.updateEmployee(this.employeeForm);
+
+        debugger;
+        console.log(response);
+
+        this.$data.employeeForm = response;
 
         await this.$swal({
-          title: "Employee updated successfully!",
-          icon: "success",
+          title: 'Employee updated successfully!',
+          icon: 'success',
           showConfirmButton: true,
           allowOutsideClick: false,
           allowEnterKey: true,
@@ -57,7 +62,7 @@ export default {
       } catch (error) {
         await this.$swal({
           title: error.message,
-          icon: "error",
+          icon: 'error',
           showConfirmButton: true,
           allowOutsideClick: false,
           allowEnterKey: true,
@@ -65,7 +70,7 @@ export default {
         });
       } finally {
         this.$router.push({
-          name: "list",
+          name: 'list',
         });
       }
     },

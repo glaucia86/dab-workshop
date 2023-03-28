@@ -5,7 +5,7 @@
  * author: Glaucia Lemos <twitter: @glaucia_lemos86>
  */
 
-import Api from './Api';
+import Api from "./Api";
 
 export default {
   /**
@@ -14,14 +14,14 @@ export default {
    */
   async createNewEmployee(employee) {
     try {
-      const response = await Api().post('/employee', employee);
+      const response = await Api().post("/employee", employee);
       return response.data.value;
     } catch (error) {
       if (error.response.status === 409) {
-        throw new Error('Employee already exists!', error);
+        throw new Error("Employee already exists!", error);
       }
       console.error(error);
-      throw new Error('Error!');
+      throw new Error("Error!");
     }
   },
 
@@ -31,11 +31,11 @@ export default {
    */
   async getEmployees() {
     try {
-      const response = await Api().get('/employee');
+      const response = await Api().get("/employee");
       return response.data.value;
     } catch (error) {
       console.error(error);
-      throw new Error('Error!');
+      throw new Error("Error!");
     }
   },
 
@@ -46,13 +46,14 @@ export default {
   async getEmployeeId(id) {
     try {
       const response = await Api().get(`/employee/employee_id/${id}`);
-      return response.data.value;
+      debugger;
+      return response.data.value[0];
     } catch (error) {
       if (error.response.status === 404) {
-        throw new Error('Employee not found!', error);
+        throw new Error("Employee not found!", error);
       }
       console.error(error);
-      throw new Error('Error!');
+      throw new Error("Error!");
     }
   },
 
@@ -63,14 +64,18 @@ export default {
   async updateEmployee(employee) {
     try {
       const id = employee.employee_id;
-      const response = await Api().put(`/employee/employee_id/${id}`, employee);
+      const clone = { ...employee };
+      delete clone.employee_id;
+
+      const response = await Api().put(`/employee/employee_id/${id}`, clone);
       return response.data.value;
     } catch (error) {
+      debugger;
       if (error.response.status === 404) {
-        throw new Error('Employee not found!', error);
+        throw new Error("Employee not found!", error);
       }
       console.error(error);
-      throw new Error('Error!');
+      throw new Error("Error!");
     }
   },
 
@@ -84,7 +89,7 @@ export default {
       return response.data;
     } catch (error) {
       console.error(error);
-      throw new Error('Error!');
+      throw new Error("Error!");
     }
   },
 };
