@@ -8,7 +8,7 @@ Since we finished setting up the database with the DAB CLI in the last session, 
 dab start --no-https-redirect
 ```
 
-> **Note:** The dab start command will start the DAB server and expose our API. To stop the server, simply press `Ctrl+C`.
+> **Note:** The `dab start --no-https-redirect` command will start the DAB server and expose our API. To stop the server, simply press `Ctrl+C`.
 
 If you run the command and the message appears as shown in the image below, it means that the server has started successfully. Note that the indicated port is `5000`.
 
@@ -23,11 +23,8 @@ Since our entity is an `employee`, the route will be `/api/employee`.
 The supported HTTP verbs are:
 
 - `GET`: to get data POST: to create data;
-
 - `PUT`: to update data
-
 - `PATCH`: to partially update the data.
-
 - `DELETE`: to delete data Let's now test all the routes!
 
 ## Route: POST 
@@ -36,14 +33,14 @@ To create a new employee, open Postman and create a new request:
 
 - `POST`: `http://localhost:5000/api/employee`
 
-In Postman, choose the option Body -> raw and include the following JSON:
+In Postman, choose the option `Body -> raw` and include the following JSON:
 
 ```json
 {
     "name": "John Doe",
     "job_role": "Developer",
-    "salary": 3000.00,
-    "employee_registration": 778899
+    "salary": 9000,
+    "employee_registration": 997733
 }
 ```
 
@@ -77,7 +74,7 @@ It will return all registered employees
 
 To get a specific employee, open Postman and create a new request:
 
-- `GET`: `localhost:5000/api/employee/employee_id/2 `
+- `GET`: `localhost:5000/api/employee/employee_id/2`
 
 It will return the employee's ID 2.
 
@@ -100,14 +97,14 @@ In Postman, choose the option `Body -> raw` and include the following JSON:
 
 ```json
 {
-    "name": "Glaucia Lemos",
-    "job_role": "Developer Advocate",
-    "salary": 3000.00,
-    "employee_registration": 445566,
-    "createdAt": "2023-03-24T23:59:02",
-    "updateAt": "2023-03-24T23:59:02"
+    "name": "John Smith",
+    "job_role": "Program Manager",
+    "salary": 8000.00,
+    "employee_registration": 448811
 }
 ```
+
+![image-23](./../../workshop-images/image-23.jpg)
 
 ## Route: DELETE 
 
@@ -120,6 +117,8 @@ And to make sure that it was deleted from the database, open Azure Data Studio a
 ```sql
 SELECT * FROM employees
 ```
+
+![image-24](./../../workshop-images/image-24.jpg)
 
  If it was successfully deleted, the record will no longer be displayed.
 

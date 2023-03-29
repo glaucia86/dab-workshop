@@ -5,10 +5,10 @@ Nessa sessão, aprenderemos como usar o Data API Builder para conectar a nossa A
 Agora que já fizemos toda a configuração do nosso banco de dados usando o DAB CLI na sessão anterior, agora estamos prontos para usar a nossa API. Para isso, execute o seguinte comando:
 
 ```bash
-dab start
+dab start --no-https-redirect
 ```
 
-> **Observação:** O comando `dab start` irá iniciar o servidor do DAB e expor a nossa API. Para parar o servidor, basta pressionar `Ctrl + C`.
+> **Observação:** O comando `dab start --no-https-redirect` iniciará o servidor do DAB e expor a nossa API. Para parar o servidor, basta pressionar `Ctrl + C`.
 
 Se ao executar o comando e aparecer a mensagem conforme a imagem abaixo, significa que o servidor foi iniciado com sucesso. Note que a porta indicada é a `5000`.
 
@@ -42,8 +42,8 @@ No Postman escolha a opção `Body -> raw` e inclua o seguinte JSON:
 {
     "name": "John Doe",
     "job_role": "Developer",
-    "salary": 3000.00,
-    "employee_registration": 778899
+    "salary": 9000,
+    "employee_registration": 997733
 }
 ```
 
@@ -99,14 +99,14 @@ No Postman escolha a opção `Body -> raw` e inclua o seguinte JSON:
 
 ```json
 {
-    "name": "Glaucia Lemos",
-    "job_role": "Developer Advocate",
-    "salary": 3000.00,
-    "employee_registration": 445566,
-    "createdAt": "2023-03-24T23:59:02",
-    "updateAt": "2023-03-24T23:59:02"
+    "name": "John Smith",
+    "job_role": "Program Manager",
+    "salary": 8000.00,
+    "employee_registration": 448811
 }
 ```
+
+![image-23](./../../workshop-images/image-23.jpg)
 
 ## Rota: DELETE
 
@@ -119,6 +119,8 @@ E para ter certeza de que deletou na base de dados, abre o Azure Data Studio e e
 ```sql
 SELECT * FROM employees
 ```
+
+![image-24](./../../workshop-images/image-24.jpg)
 
 Se deletou com sucesso, o registro não será mais exibido.
 
