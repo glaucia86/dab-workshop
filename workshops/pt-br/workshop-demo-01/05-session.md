@@ -67,10 +67,77 @@ Se você deseja obter mais informações sobre o arquivo de configuração do DA
 
 Nesse arquivo, dependendo da quantidade de tabelas que você tem, você pode definir relacionamentos de 1 para 1, 1 para N e N para N. O céu é o limite aqui.
 
+## Configurando as variáveis de ambiente da connection string 
+
+Se vocês observarem no arquivo `dab.config.json`, a nossa connection string está exposta. E, isso é um problema que precisamos resolver. Para isso, peço que você abre o arquivo `dab.config.json` e substitua a connection string pelo seguinte:
+
+<details><summary><b>dab.config.json</b></summary>
+<br/>
+
+```json
+"connection-string": "@env('DATABASE_CONNECTION_STRING')"
+```
+
+</details>
+<br/>
+
+Talvez você esteja se perguntando: "Mas, como eu vou definir essa variável de ambiente?" Bom existem três formas de fazer isso. 
+
+### Caso 1: Usando o Prompt de Comando
+
+Se você estiver usando o Prompt de Comando, você pode definir a variável de ambiente da seguinte forma:
+
+```bash
+export DATABASE_CONNECTION_STRING='<SUA-CONNECTION-STRING>'
+```
+
+### Caso 2: Usando o PowerShell
+
+Se você estiver usando o PowerShell, você pode definir a variável de ambiente da seguinte forma:
+
+```powershell
+$env:DATABASE_CONNECTION_STRING='<SUA-CONNECTION-STRING>'
+```
+
+Mas, pode acontecer de você não conseguir definir a variável de ambiente na sua máquina dessas formas. Vamos para o terceiro caso.
+
+### Caso 3: Definindo variável de ambiente no computador
+
+#### Usuários Windows
+
+Se você for usuário de Windows, você pode definir a variável de ambiente da seguinte forma:
+
+1. Clique com o botão direito do mouse no botão Iniciar e selecione **Painel de Controle**.
+2. Selecione **Sistema e Segurança** e, em seguida, **Sistema**.
+3. Clique em **Configurações avançadas do sistema**.
+4. Clique em **Variáveis de Ambiente**.
+5. Inclua a connection string em **Variáveis dos Sistema**.
+6. Clique em **Novo**. Em **Nome da variável**, digite `DATABASE_CONNECTION_STRING`. Em **Valor da variável**, digite a connection string do seu banco de dados.
+7. Clique em **OK** para salvar as alterações.
+
+#### Usuários Linux
+
+Se você for usuário de Linux, você pode definir a variável de ambiente da seguinte forma:
+
+1. Abra o arquivo `~/.bashrc` no seu editor de texto favorito.
+2.  Adicione a seguinte linha ao final do arquivo: `export DATABASE_CONNECTION_STRING='<SUA-CONNECTION-STRING>'`
+3.  Salve o arquivo e feche-o.
+
+#### Usuários Mac
+
+Se você for usuário de Mac, você pode definir a variável de ambiente da seguinte forma:
+
+1. Abra o arquivo `~/.bash_profile` no seu editor de texto favorito.
+2. Adicione a seguinte linha ao final do arquivo: `export DATABASE_CONNECTION_STRING='<SUA-CONNECTION-STRING>'`
+3. Salve o arquivo e feche-o.
+
+> **Observação:** toda vez que você for criar uma nova connection string para diferentes bancos de dados, você precisará definir uma nova variável de ambiente. Cuida para não confundir as variáveis de ambiente.
+
+Perfeito! Agora que já definimos a connection string, vamos para o próximo passo.
+
 ## Adicionando Entidades ao arquivo de configuração
 
 Agora que já criamos esse arquivo, podemos definir quais entidades serão expostas pela API. Para isso, vamos usar o DAB CLI para gerar o arquivo de configuração. Para isso, execute o comando abaixo (no seu terminal):
-
 
 ```bash
 dab add employee --source dbo.employees --permissions "anonymous:*"
@@ -106,7 +173,37 @@ Na parte de `permissions` é onde a gente define quem (em termos de roles) quem 
 
 > Nunca use o `anonymous` em produção. Sempre defina as roles de acordo com a necessidade do seu projeto.
 
-Vamos agora começar de fato a usar a nossa API através do DAB CLI. Mas, veremos isso na próxima sessão.
+## Configurando o CORS
+
+O CORS é um mecanismo que permite que um site acesse recursos de um servidor em um domínio diferente do seu. Por exemplo, se você tem um site em `https://www.contoso.com` e deseja acessar um recurso em `https://www.fabrikam.com`, o CORS irá permitir que você faça isso.
+
+Já com o intuito de facilitar, pois estaremos integrando o DAB com o nosso frontend, vamos configurar o CORS para que ele permita que qualquer site acesse a nossa API.
+
+Se vocês observarem, no arquivo `dab.config.json`, existe uma propriedade chamada `cors`. Basta adicionar o valor `*` para que o CORS permita que qualquer site acesse a nossa API.
+
+<details><summary><b>dab.config.json</b></summary>
+<br/>
+
+```json
+(...)
+"host": {
+      "mode": "development",
+      "cors": {
+        "origins": ["*"],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      }
+    }
+  
+(...)
+```
+
+</details>
+<br/>
+
+Pronto! Vamos agora começar de fato a usar a nossa API através do DAB CLI. Mas, veremos isso na próxima sessão.
 
 **[⬅️ Voltar: Sessão 04](./04-session.md) | **[Próximo: Sessão 06 ➡️](./06-session.md)****
 

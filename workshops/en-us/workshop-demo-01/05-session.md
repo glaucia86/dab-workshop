@@ -67,9 +67,72 @@ If you want to get more information about the DAB configuration file, access the
 
 In this file, depending on the number of tables you have, you can define relationships of 1 to 1, 1 to N, and N to N. The sky's the limit here.
 
-## TODO: Using DAB_ENVIRONMET 
+## Setting the environment variables of the connection string
 
-(include some important information about it here)
+If you take a look at the `dab.config.json` file, you will notice that our connection string is exposed. This is a problem that we need to solve. To do so, please open the `dab.config.json` file and replace the connection string with the following:
+
+<details><summary><b>Example of a generated file: dab.config.json</b></summary>
+<br/>
+
+```json
+"connection-string": "@env('DATABASE_CONNECTION_STRING')"
+```
+
+</details>
+<br/>
+
+You might be wondering, "But how do I set this environment variable?" Well, there are three ways to do it.
+
+### Case 1: Using Command Prompt
+
+If you are using Command Prompt, you can set the environment variable as follows:
+
+```bash
+export DATABASE_CONNECTION_STRING='<YOUR-CONNECTION-STRING>'
+```
+
+### Case 2: Using PowerShell
+
+If you are using PowerShell, you can set the environment variable as follows:
+
+```powershell
+$env:DATABASE_CONNECTION_STRING='<YOUR-CONNECTION-STRING>'
+```
+
+But it may happen that you are unable to set the environment variable on your machine using these methods. Let's move to the third case.
+
+### Case 3: Defining the environment variable on the computer
+
+#### Windows users
+
+If you are a Windows user, you can set the environment variable as follows:
+
+1. Right-click on the `Start` button and select `Control Panel`.
+2. In the `Control Panel` window, select `System and Security`.
+3. In the `System and Security` window, select `System`.
+4. In the `System` window, select `Advanced system settings`.
+5. In the `Advanced system settings` window, select `Environment Variables`.
+6. In the `Environment Variables` window, select `New...` in the `System variables` section.
+7. In the `New System Variable` window, enter the following information:
+     - Variable name: `DATABASE_CONNECTION_STRING`
+    - Variable value: `<YOUR-CONNECTION-STRING>`
+8. Click `OK` to save the changes.
+
+#### Linux and Mac users
+
+If you are a Linux or Mac user, you can set the environment variable as follows:
+
+1. Open the `~/.bashrc` file in your favorite IDE. 
+2. Add the following line to the end of the file: 
+
+```bash	
+export DATABASE_CONNECTION_STRING = "YOUR-CONNECTION-STRING>" 
+```
+3. Save and close the file.
+
+> **Note**: Every time you create a new connection string for different databases, you will need to define a new environment variable. Be careful not to confuse the environment's variables.
+
+Great! Now that we have defined the connection string, let's move on to the next step.
 
 ## Adding Entities to the Configuration File
 
@@ -109,10 +172,36 @@ In the `permissions` part, we define who (in terms of roles) can access the rela
 
 > Never use anonymous in production. Always define the roles according to the needs of your project.
 
-## TODO: Talk about the CROSS-ORIGIN
+## Configuring the CORS
 
-(include some important information here)
+CORS is a way for a website to get resources from a server on a different domain than its own.For example, if you have a website at https://www.contoso.com and want to access a resource at https://www.fabrikam.com, CORS will allow you to do so.
 
-Now, let's actually start using our API through the DAB CLI. But we will see that in the next section.
+To make things easier, as we will be integrating DAB with our frontend, we will configure CORS to allow any site to access our API.
+
+If you look at the `dab.config.json` file, you will see a property called `cors`. Simply add the value `*` to allow CORS to permit any site to access our API.
+
+<details><summary><b>dab.config.json</b></summary>
+<br/>
+
+```json
+(...)
+"host": {
+      "mode": "development",
+      "cors": {
+        "origins": ["*"],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      }
+    }
+  
+(...)
+```
+
+</details>
+<br/>
+
+Great! Now we can actually start using our API through the DAB CLI. But we'll cover that in the next section.
 
 **[⬅️ Back: Session 04](./04-session.md) | **[Next: Session 06 ➡️](./06-session.md)****
