@@ -63,7 +63,7 @@ Check the contents of the file:
     "host": {
       "mode": "production",
       "cors": {
-        "origins": [],
+        "origins": ["http://localhost:4280"],
         "allow-credentials": false
       },
       "authentication": {
