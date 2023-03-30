@@ -4,7 +4,6 @@
 		"dockerfile": "Dockerfile",
 		"context": ".."
 	},
-
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
@@ -14,22 +13,23 @@
 				"dbaeumer.vscode-eslint",
 				"octref.vetur",
 				"GitHub.copilot",
+				"jasonnutter.search-node-modules",
 				"ms-vscode.vscode-node-azure-pack",
-				"ms-vscode-remote.remote-containers",
 				"ms-vscode-remote.vscode-remote-extensionpack",
-				"humao.rest-client"
+				"humao.rest-client",
+				"ms-vscode.vscode-node-azure-pack",
+				"EditorConfig.EditorConfig",
+				"ms-mssql.sql-database-projects-vscode",
+				"adpyke.vscode-sql-formatter"
 			]
 		}
 	},
-	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8080
 	],
-	
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
-	
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node",
 	"features": {
