@@ -158,15 +158,13 @@ Now open the file and see its contents:
 We now need to point the endpoint to SWA for our project. To do this, open the `client/src/Api.js` file and change the endpoint to the following:
 
 ```javascript
-import axios from 'axios';
+import axios from "axios";
 
-export default () => axios.create({
-  // ==> DAB request
-  // baseURL: 'http://localhost:5000/api',
-
-  // ==> ASWA request
-  baseURL: 'http://localhost:4280/data-api/rest',
-});
+export default () =>
+  axios.create({
+    // ==> ASWA request (development/production)
+    baseURL: "/data-api/rest",
+  });
 ```
 
 Note that we are now pointing to the endpoint of the Azure Static Web Apps CLI. Another interesting point is that this endpoint is different from the endpoint we used in DAB. This is because the Azure Static Web Apps CLI is a proxy that communicates between your application and the Data Api Builder.
@@ -174,13 +172,13 @@ Note that we are now pointing to the endpoint of the Azure Static Web Apps CLI. 
 The Azure Static Web Apps CLI endpoint is composed as follows:
 
 ```bash
-http://localhost:4280/data-api/rest/<NOME-ENTIDADE>
+http://localhost:4280/data-api/rest/<ENTITY-NAME>
 ```
 
 After doing this, let's run the build command for our project. To do this, go to the `client` folder and run the following command:
 
 ```bash
-npm run build
+swa build
 ``` 
 
 ## Running the Azure Static Web Apps CLI with DAB
