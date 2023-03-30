@@ -47,8 +47,8 @@ Depois de clicar no serviço, clique em `Create`. Abrirá uma nova janela. Nessa
 - **Repository**: Selecione o repositório que você criou anteriormente.
 - **Branch**: Selecione a branch que você deseja. No meu caso é a `main`.
 - **Build Preset**: Selecione `Vue.js`.
-- **App location**: Digite `client`.
-- **Api location**: Deixe em branco.
+- **App location**: Digite `./client`.
+- **Api location**: Deixa em branco.
 - **Output location**: Digite `dist`.
 
 Veja nas imagens abaixo como ficou a configuração:
@@ -96,5 +96,88 @@ Vá até `Security` e depois `Networking`. Abrirá uma nova janela. Nessa janela
 Feito isso, agora podemos clicar em: `I acknowledge the steps needed to enable this static web app to connect to my database` e depois em `Link`. 
 
 ![image-37](./../../workshop-images/image-37.jpg)
+
+Agora precisamos definir o `data_api_location`. Como faremos isso? Abre o seu prompt comando e digite o seguinte comando:
+
+```bash
+git pull
+```
+
+Ao fazer isso, você verá que terá uma pasta chamada `.github` na raiz do projeto. Nessa pasta, você verá um arquivo chamado `workflows`. Nessa pasta, você verá um arquivo chamado `azure-static-web-apps-<nome-do-seu-app>.yml`. 
+
+Abra o arquivo e verá que ele está assim:
+
+> esse arquivo é gerado pelo meu GH Actions. O seu será gerado com alguns secrets diferentes.
+
+<details><summary>azure static web apps yaml file (sample)</summary>
+
+```yml
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_MEADOW_06BCC431E }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: 'upload'
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: './client'
+          output_location: 'dist'
+          ###### End of Repository/Build Configurations ######
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_MEADOW_06BCC431E }}
+          action: 'close'
+```
+
+</details>
+</br>
+
+Depois que o GitHub Actions finalizar os jobs e mostrar que tudo estiver verde.
+
+![image-38](./../../workshop-images/image-38.jpg)
+
+No próprio job do Build do GitHub Actions ele mostra o link da aplicação. Clique no link e veja se a aplicação está funcionando.
+
+![image-39](./../../workshop-images/image-39.jpg)
+
+Vejamos em ação a aplicação, que agora está hospedada na nuvem com a base de dados integrada com ajuda do Data Api Builder e Azure Static Web Apps.
+
+![image-40](./../../workshop-images/gif-03.gif)
+
+Se tudo estiver funcionando conforme o esperado, parabéns! Você concluiu o workshop.
+
+Se desejar ver o código final do projeto, acesse o repositório do GitHub: **[AQUI](https://github.com/glaucia86/dab-swa-azure-sql-workshop)**
+
+**[⬅️ Voltar: Sessão 08](./08-session.md) | **[Próximo: Sessão 10 ➡️](./10-session.md)****
+
 
 
