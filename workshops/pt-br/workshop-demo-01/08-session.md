@@ -139,7 +139,7 @@ Agora abre o arquivo e veja o conteúdo do arquivo:
 {
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
-    "demo-01": {
+    "dab-swa-azure-sql-workshop": {
       "appLocation": "client",
       "outputLocation": "dist",
       "appBuildCommand": "npm run build",
