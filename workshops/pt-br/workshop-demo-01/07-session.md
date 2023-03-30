@@ -6,6 +6,8 @@ Nessa sessão, vamos integrar o DAB com o Vue.js, um framework JavaScript para c
 
 Para que o enfoque seja na integração com o DAB, vamos utilizar uma aplicação Vue.js já pronta. Aqui mesmo nesse repositório temos uma pasta chamada `demo-01` e dentro dela uma outra pasta chamada `client`. Essa pasta possui uma aplicação Vue.js, conforme a imagem abaixo:
 
+> Você pode fazer o download do código fonte da aplicação **[AQUI](https://github.com/glaucia86/dab-swa-azure-sql-workshop/tree/initial-project-workshop)**
+
 ![image-25](./../../workshop-images/image-25.jpg)
 
 Para executar a aplicação, precisamos antes instalar as dependências. Para isso, abra o terminal e navegue até a pasta `client` e execute o comando 
