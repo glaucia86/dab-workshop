@@ -1,6 +1,6 @@
 # Integrando DAB com Azure Static Web Apps
 
-Nessa sessão, aprenderemos como podemos integrar o Data Api Builder com o Azure Static Web Apps usando uma ferramenta chamada **[Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/)**
+Nessa sessão, aprenderemos como podemos integrar o Data Api Builder com o Azure Static Web Apps usando uma ferramenta chamada **[Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/)**.
 
 ## O que é Azure Static Web Apps?
 
@@ -81,8 +81,6 @@ Veja o conteúdo do arquivo:
 Vamos agora criar a nossa entidade `Employee`. Será muito parecido com o que fizemos em uma das sessões anteriores. Esse comando deverá ser executado dentro da pasta `swa-db-connections`:
 
 ```bash
-
-```bash
 dab add employee --source dbo.employees --permissions "anonymous:*" -c staticwebapp.database.config.json
 ```
 
@@ -106,7 +104,6 @@ Abre o arquivo `staticwebapp.database.config.json` e veja que agora temos a enti
   }
 
 (...)
-
 ```
 
 </details>
