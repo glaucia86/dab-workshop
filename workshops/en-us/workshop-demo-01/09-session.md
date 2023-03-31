@@ -175,3 +175,5 @@ If everything is working as expected, congratulations! You have completed the wo
 
 If you want to see the final code of the project, access the GitHub repository by clicking **[HERE](https://github.com/glaucia86/dab-swa-azure-sql-workshop)**.
 
+**[⬅️ Back: Session 08](./08-session.md)**
+| **[Next: Session 10 ➡️](./10-session.md)**
