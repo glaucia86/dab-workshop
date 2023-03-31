@@ -53,7 +53,7 @@ Now, let's change the URLs to point to the DAB.
 
 To do this, open the `EmployeeService.js` file and change the code to the code below:
 
-<details><summary>Método: createNewEmployee</summary>
+<details><summary>Method: createNewEmployee</summary>
 
 ```javascript
   async createNewEmployee(employee) {
@@ -76,7 +76,7 @@ To do this, open the `EmployeeService.js` file and change the code to the code b
 
 The same goes for the other methods.
 
-<details><summary>Método: getAllEmployees</summary>
+<details><summary>Method: getAllEmployees</summary>
 
 ```javascript
   async getEmployees() {
@@ -93,7 +93,7 @@ The same goes for the other methods.
 </details>
 </br>
 
-<details><summary>Método: getEmployeeById</summary>
+<details><summary>Method: getEmployeeById</summary>
 
 ```javascript
   async getEmployeeId(id) {
@@ -113,7 +113,7 @@ The same goes for the other methods.
 </details>
 </br>
 
-<details><summary>Método: updateEmployee</summary>
+<details><summary>Method: updateEmployee</summary>
 
 ```javascript
   async updateEmployee(employee) {
@@ -140,7 +140,7 @@ The same goes for the other methods.
 </details>
 </br>
 
-<details><summary>Método: deleteEmployee</summary>
+<details><summary>Method: deleteEmployee</summary>
 
 ```javascript
   async deleteEmployee(id) {
