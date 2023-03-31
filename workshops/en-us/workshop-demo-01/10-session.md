@@ -6,7 +6,7 @@ There are many other functionalities that DAB offers that were not covered in th
 
 - Support authentication via OAuth2/JWT
 - Filtering, sorting, and pagination
-- GraphQL
+- Support for GraphQL
 - Relationship cardinality
 - Role-based authorization using received claims
 - Item-level security via policy expressions
