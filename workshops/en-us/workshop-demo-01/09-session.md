@@ -159,7 +159,7 @@ jobs:
 </details>
 </br>
 
-Once the GitHub Actions finish the jobs and show that everything is green.
+Once the GitHub Actions finish the jobs and show that everything is green - we are done!
 
 ![image-38](./../../workshop-images/image-38.jpg)
 
