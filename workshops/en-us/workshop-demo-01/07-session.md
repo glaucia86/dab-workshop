@@ -175,7 +175,7 @@ Now, open the browser and access the URL `http://localhost:8080`. You will see t
 
 And voilà! The application is integrated with the DAB.
 
-But what if I want to use Azure Static Web Apps that are integrated with DAB to deploy the app?How do I do that?
+But what if I want to use Azure Static Web Apps that are integrated with DAB to deploy the app? How do I do that?
 
 We'll see that in the next session.
 
