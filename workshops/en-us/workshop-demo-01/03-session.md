@@ -24,8 +24,6 @@ Keep this connection string, as we will need it later.
 
 And click on the `ODBC` option and copy the connection string.
 
-If you are unsure how to create the connection string, you can copy it from the **[.env_template](https://github.com/glaucia86/dab-worskhop/blob/main/demo-01/.env_template)** and replace the values.
-
 Now, let's move on to the next session.
 
 **[⬅️ Back: Session 02](./02-session.md) | **[Next: Session 04 ➡️](./04-session.md)****
