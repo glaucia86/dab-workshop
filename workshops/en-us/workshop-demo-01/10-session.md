@@ -1,4 +1,4 @@
-## Conclusion
+# Conclusion
 
 In this workshop, we learned how to create an application using DAB (Data API Builder) and how we can integrate this application with Azure Static Web Apps in just a few minutes.
 
