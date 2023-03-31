@@ -22,7 +22,8 @@ Since our entity is an `employee`, the route will be `/api/employee`.
 
 The supported HTTP verbs are:
 
-- `GET`: to get data POST: to create data;
+- `GET`: to get data 
+- `POST`: to create data;
 - `PUT`: to update data
 - `PATCH`: to partially update the data.
 - `DELETE`: to delete data Let's now test all the routes!
