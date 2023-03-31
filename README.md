@@ -29,7 +29,7 @@ The workshops was written in a way that you can follow it in order. However, you
 
 | Workshops                                              | en-us                                                    | pt-br                                                    | es           | fr           |
 | ------------------------------------------------------ | -------------------------------------------------------- | -------------------------------------------------------- | ------------ | ------------ |
-| Full Stack Application with DAB + Azure SQL and Vue.Js | **[HERE](workshops/en-us/workshop-demo-01/01-intro.md)** | **[AQUI](workshops/pt-br/workshop-demo-01/01-intro.md)** | **[TODO]()** | **[TODO]()** |
+| Full Stack Application with DAB + Azure SQL + Azure Static Web Apps and Vue.Js | **[HERE](workshops/en-us/workshop-demo-01/01-intro.md)** | **[AQUI](workshops/pt-br/workshop-demo-01/01-intro.md)** | **[TODO]()** | **[TODO]()** |
 
 ## ⭐️ Free Courses & Important Resources
 
