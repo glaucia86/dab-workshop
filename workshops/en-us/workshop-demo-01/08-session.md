@@ -10,13 +10,13 @@ One of the best things about this service is that you can host your static and d
 
 If you want to learn more about Azure Static Web Apps, you can get more information at the link below:
 
-- **[Documentação Oficial - Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview?WT.mc_id=javascript-75515-gllemos)**
+- **[Offical Documentation - Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview?WT.mc_id=javascript-75515-gllemos)**
 
 ## What is Azure Static Web Apps CLI?
 
 Azure Static Web Apps CLI is a command-line tool that lets you create, configure, and deploy both static and dynamic applications in Azure Static Web Apps.
 
-- **[Documentação Oficial - SWA CLI](https://azure.github.io/static-web-apps-cli/docs/intro)**
+- **[Official Documentation - SWA CLI](https://azure.github.io/static-web-apps-cli/docs/intro)**
 
 ## Installing Azure Static Web Apps CLI
 
