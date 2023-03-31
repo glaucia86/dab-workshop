@@ -4,7 +4,7 @@ In this section, we'll connect DAB to Vue.js, a JavaScript framework for buildin
 
 ## Understanding the Front-End Application
 
-To focus on integration with DAB, we will use a pre-built Vue.js application. In this repository itself, we have a folder called demo-01 and inside it another folder called client. This folder contains a Vue.js application, as shown in the image below:
+To focus on integration with DAB, we will use a pre-built Vue.js application. In this repository itself, we have a folder called `demo-01` and inside it another folder called client. This folder contains a Vue.js application, as shown in the image below:
 
 ![image-25](./../../workshop-images/image-25.jpg)
 
