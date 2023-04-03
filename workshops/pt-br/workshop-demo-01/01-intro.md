@@ -6,7 +6,7 @@ Nesse workshop vamos aprender a criar uma aplicação completa utilizando o DAB,
 
 ## O que é o DAB?
 
-O Data API Builder (DAB) é uma ferramenta de código aberto da Microsoft que converte REST e GraphQL em consultas de Banco de Dados. Com Data API Builder, você pode gerar código com base em seu esquema de banco de dados que pode ser acessado por meio de uma API REST ou GraphQL que funcionará com qualquer linguagem, plataforma ou dispositivo. 
+O Data API builder (DAB) é uma ferramenta de código aberto da Microsoft que converte REST e GraphQL em consultas de Banco de Dados. Com Data API builder, você pode gerar código com base em seu esquema de banco de dados que pode ser acessado por meio de uma API REST ou GraphQL que funcionará com qualquer linguagem, plataforma ou dispositivo. 
 
 Ele também vem com suporte para comportamentos de organização dos dados que requerem código adicional, como paginação, filtragem e classificação pronta para uso, reduzindo o tempo necessário para criar o Back-End da sua aplicação. Outro ponto importante a ser mencionado é que o DAB pode ser executado localmente, em contêiner ou como um Serviço Gerenciado no Azure, por meio do novo recurso de Conexão de Banco de Dados disponível no Azure Static Web Apps.
 
@@ -14,9 +14,9 @@ Ele também vem com suporte para comportamentos de organização dos dados que r
 
 Com esse serviço, podemos facilmente manipular dados com suporte para operações CRUD (Create, Read, Update e Delete). Incluso também suporte para autorização integrada e relacionamentos. 
 
-A parte mais interessante do Data API Builder é que você poder usar de forma offline (ou localmente) ou na nuvem com o Azure. Permitindo assim, criar rapidamente um Back-end totalmente funcional com um Banco de Dados a sua escolha, visando justamente acelerar o processo de desenvolvimento.
+A parte mais interessante do Data API builder é que você poder usar de forma offline (ou localmente) ou na nuvem com o Azure. Permitindo assim, criar rapidamente um Back-end totalmente funcional com um Banco de Dados a sua escolha, visando justamente acelerar o processo de desenvolvimento.
 
-Se você desejar aprender mais sobre o **[Data API Builder](https://learn.microsoft.com/azure/data-api-builder/overview-to-data-api-builder?WT.mc_id=javascript-75515-gllemos)**
+Se você desejar aprender mais sobre o **[Data API builder](https://learn.microsoft.com/azure/data-api-builder/overview-to-data-api-builder?WT.mc_id=javascript-75515-gllemos)**
 
 Os Bancos de Dados suportados pelo DAB são:
 

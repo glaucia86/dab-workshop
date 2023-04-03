@@ -1,6 +1,6 @@
 # Conclusão
 
-Nesse workshop aprendemos a como criar uma aplicação usando o DAB (Data API Builder) e como podemos em poucos minutos integrar essa aplicação com Azure Static Web Apps.
+Nesse workshop aprendemos a como criar uma aplicação usando o DAB (Data API builder) e como podemos em poucos minutos integrar essa aplicação com Azure Static Web Apps.
 
 Há muitas outras funcionalidades que o DAB oferece que não foram abordadas nesse workshop. Como por exemplo:
 
@@ -19,9 +19,9 @@ A ferramenta é totalmente Open Source. Então se você está a procura de ajuda
 E, claro se você quiser saber mais sobre o DAB, pode conferir os seguintes links:
 
 - **[Documentação Oficial - DAB](https://learn.microsoft.com/azure/data-api-builder/)**
-- **[Data API Builder - Azure Database PostgreSQL](https://learn.microsoft.com/azure/data-api-builder/get-started/get-started-azure-postgresql)**
-- **[Data API Builder - Azure Cosmos DB](https://learn.microsoft.com/azure/data-api-builder/get-started/get-started-azure-cosmos-db)**
-- **[Data API Builder - Azure MySQL](https://learn.microsoft.com/azure/data-api-builder/get-started/get-started-azure-mysql)**
+- **[Data API builder - Azure Database PostgreSQL](https://learn.microsoft.com/azure/data-api-builder/get-started/get-started-azure-postgresql)**
+- **[Data API builder - Azure Cosmos DB](https://learn.microsoft.com/azure/data-api-builder/get-started/get-started-azure-cosmos-db)**
+- **[Data API builder - Azure MySQL](https://learn.microsoft.com/azure/data-api-builder/get-started/get-started-azure-mysql)**
 - **[Conectando Base de Dados ao Static Web Apps (preview)](https://learn.microsoft.com/en-us/azure/static-web-apps/database-overview)**
 - **[Configuração da conexão da Base de Dados no Azure Static Web Apps (preview)](https://learn.microsoft.com/en-us/azure/static-web-apps/database-configuration)**
 - **[Library Content Management System sample](https://github.com/Azure-Samples/dab-swa-library-demo)**

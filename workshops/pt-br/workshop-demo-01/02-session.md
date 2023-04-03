@@ -18,7 +18,7 @@ dotnet --list-sdks
 Para facilitar no momento de desenvolver, faremos uso do DAB CLI. Para instalar o DAB CLI, execute o seguinte comando no terminal:
 
 ```bash
-dotnet tool install --global Microsoft.DataApiBuilder --version <numero_versao>
+dotnet tool install --global Microsoft.DataApibuilder --version <numero_versao>
 ```
 
 > para verificar a versão mais atualizada, vocês podem conferir diretamente no repositório da ferramenta **[AQUI](https://github.com/Azure/data-api-builder/tags)**
@@ -26,7 +26,7 @@ dotnet tool install --global Microsoft.DataApiBuilder --version <numero_versao>
 Se você tiver uma versão anterior do DAB CLI instalada, você pode atualizar para a versão mais recente executando o seguinte comando:
 
 ```bash
-dotnet tool update --global Microsoft.DataApiBuilder --version <version_number>
+dotnet tool update --global Microsoft.DataApibuilder --version <version_number>
 ```
 
 Depois digite o comando para saber se está devidadmente instalado o pacote

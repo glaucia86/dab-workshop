@@ -1,6 +1,6 @@
-# Using Data API Builder with an Azure SQL Database
+# Using Data API builder with an Azure SQL Database
 
-In this session, we will learn how to use the Data API Builder to connect our API with the Azure SQL Database.
+In this session, we will learn how to use the Data API builder to connect our API with the Azure SQL Database.
 
 Since we finished setting up the database with the DAB CLI in the last session, we are now ready to use our API. To do this, run the following command:
 

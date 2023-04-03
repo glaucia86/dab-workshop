@@ -1,11 +1,11 @@
-# Workshop - Learn: DAB (Data API Builder) 
+# Workshop - Learn: DAB (Data API builder) 
 
 ![dab-nestjs](img/dab-workshops.gif)
 
 <p style="text-align: center;">❤️ Developed by the Community for the Community!❤️</p>
 <br/>
 
-Welcome to the DAB (Data API Builder) workshops. In this repository, you will find a series of workshops that will help you learn how to develop an application using DAB with different Front-End frameworks, but with different databases!
+Welcome to the DAB (Data API builder) workshops. In this repository, you will find a series of workshops that will help you learn how to develop an application using DAB with different Front-End frameworks, but with different databases!
 
 ## 🚀 Resources Used
 
@@ -33,7 +33,7 @@ The workshops was written in a way that you can follow it in order. However, you
 
 ## ⭐️ Free Courses & Important Resources
 
-Here are some free courses and important resources that you can use to learn more about DAB (Data API Builder)
+Here are some free courses and important resources that you can use to learn more about DAB (Data API builder)
 
 - ✅ **[DAB Documentation](https://learn.microsoft.com/azure/data-api-builder/overview-to-data-api-builder?WT.mc_id=javascript-75515-gllemos)**
 - ✅ **[DAB GitHub Repository](https://github.com/Azure/data-api-builder)**

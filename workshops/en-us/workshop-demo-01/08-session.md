@@ -1,6 +1,6 @@
 # Integrating DAB with Azure Static Web Apps
 
-In this session, we will learn how we can integrate the Data Api Builder with Azure Static Web Apps using a tool called **[Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/)**.
+In this session, we will learn how we can integrate the Data Api builder with Azure Static Web Apps using a tool called **[Azure Static Web Apps CLI](https://azure.github.io/static-web-apps-cli/)**.
 
 ## What is Azure Static Web Apps?
 
@@ -167,7 +167,7 @@ export default () =>
   });
 ```
 
-Note that we are now pointing to the endpoint of the Azure Static Web Apps CLI. Another interesting point is that this endpoint is different from the endpoint we used in DAB. This is because the Azure Static Web Apps CLI is a proxy that communicates between your application and the Data Api Builder.
+Note that we are now pointing to the endpoint of the Azure Static Web Apps CLI. Another interesting point is that this endpoint is different from the endpoint we used in DAB. This is because the Azure Static Web Apps CLI is a proxy that communicates between your application and the Data Api builder.
 
 The Azure Static Web Apps CLI endpoint is composed as follows:
 
@@ -191,7 +191,7 @@ swa start --data-api-location swa-db-connections
 
 Note again that we are passing the `--data-api-location` parameter and indicating the path of the `swa-db-connections` folder. This may vary according to your project; you may have to specify where the `staticwebapp.database.config.json` file is located.
 
-Note in the image below that the Azure Static Web Apps CLI is running in parallel with the Data Api Builder:
+Note in the image below that the Azure Static Web Apps CLI is running in parallel with the Data Api builder:
 
 ![image-29](./../../workshop-images/image-29.jpg)
 

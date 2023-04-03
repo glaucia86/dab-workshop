@@ -1,8 +1,8 @@
-# Creating the configuration file for DAB (Data API Builder)
+# Creating the configuration file for DAB (Data API builder)
 
-In this section, we will learn how to configure the configuration file of DAB (Data API Builder) so that we can generate our APIs.
+In this section, we will learn how to configure the configuration file of DAB (Data API builder) so that we can generate our APIs.
 
-The Data API Builder uses the Azure Databases engine, which requires a configuration file. We will specify which database DAB will connect to and which entities, along with their properties, the API will expose through this file.
+The Data API builder uses the Azure Databases engine, which requires a configuration file. We will specify which database DAB will connect to and which entities, along with their properties, the API will expose through this file.
 
 To do this, we will use the DAB CLI to initialize the configuration file. To do this, run the command below (in your terminal:
 

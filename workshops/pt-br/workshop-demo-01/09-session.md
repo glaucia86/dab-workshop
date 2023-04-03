@@ -169,7 +169,7 @@ No próprio job do Build do GitHub Actions ele mostra o link da aplicação. Cli
 
 ![image-39](./../../workshop-images/image-39.jpg)
 
-Vejamos em ação a aplicação, que agora está hospedada na nuvem com a base de dados integrada com ajuda do Data Api Builder e Azure Static Web Apps.
+Vejamos em ação a aplicação, que agora está hospedada na nuvem com a base de dados integrada com ajuda do Data Api builder e Azure Static Web Apps.
 
 ![image-40](./../../workshop-images/gif-03.gif)
 

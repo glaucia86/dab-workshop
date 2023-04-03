@@ -9,7 +9,7 @@ In this workshop, we will learn how to create a complete application using DAB, 
 
 ## What is DAB? 
 
-The Data API Builder (DAB) is an open-source tool from Microsoft that converts REST and GraphQL into database queries. With Data API Builder, you can generate code based on your database schema that can be accessed through a REST or GraphQL API that will work with any language, platform, or device.
+The Data API builder (DAB) is an open-source tool from Microsoft that converts REST and GraphQL into database queries. With Data API builder, you can generate code based on your database schema that can be accessed through a REST or GraphQL API that will work with any language, platform, or device.
 
 It also comes with support for data organization behaviors that require additional code, such as pagination, filtering, and ready-to-use sorting, reducing the time needed to create the Back-End of your application. Another important point to mention is that DAB can be run locally, in a container, or as a Managed Service in Azure through the new Database Connection feature available in Azure Static Web Apps.
 
@@ -17,9 +17,9 @@ It also comes with support for data organization behaviors that require addition
 
 With this service, we can easily manipulate data with support for CRUD (Create, Read, Update, and Delete) operations. It also includes support for integrated authorization and relationships.
 
-The most interesting part of the Data API Builder is that you can use it offline (or locally) or in the cloud with Azure. This allows you to quickly create a fully functional Back-end with a database of your choice, aiming to accelerate the development process.
+The most interesting part of the Data API builder is that you can use it offline (or locally) or in the cloud with Azure. This allows you to quickly create a fully functional Back-end with a database of your choice, aiming to accelerate the development process.
 
-If you want to learn more about the Data API Builder, the databases supported by DAB are:
+If you want to learn more about the Data API builder, the databases supported by DAB are:
 
 - **[Azure SQL](https://azure.microsoft.com/products/azure-sql/?WT.mc_id=javascript-75515-gllemos)** 
 - **[SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads?WT.mc_id=javascript-75515-gllemos)**

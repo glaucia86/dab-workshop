@@ -167,7 +167,7 @@ In the Build job of the GitHub Actions, it shows the link to the application its
 
 ![image-39](./../../workshop-images/image-39.jpg)
 
-Let's see the application in action, which is now hosted in the cloud with the database integrated with the help of the Data Api Builder and Azure Static Web Apps.
+Let's see the application in action, which is now hosted in the cloud with the database integrated with the help of the Data Api builder and Azure Static Web Apps.
 
 ![image-40](./../../workshop-images/gif-03.gif)
 
