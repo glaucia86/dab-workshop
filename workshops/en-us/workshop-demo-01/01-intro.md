@@ -5,8 +5,6 @@
 
 In this workshop, we will learn how to create a complete application using DAB, Azure SQL, and Vue.js. We will create an employee management application where we can add, edit, and delete employees.
 
-
-
 ## What is DAB? 
 
 The Data API builder (DAB) is an open-source tool from Microsoft that converts REST and GraphQL into database queries. With Data API builder, you can generate code based on your database schema that can be accessed through a REST or GraphQL API that will work with any language, platform, or device.
