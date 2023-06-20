@@ -2,7 +2,6 @@
 
 ![dab](./../../workshop-images/dab-workshops.gif)
 
-
 In this workshop, we will learn how to create a complete application using DAB, Azure SQL, and Vue.js. We will create an employee management application where we can add, edit, and delete employees.
 
 ## What is DAB? 
